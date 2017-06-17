@@ -77,7 +77,7 @@ namespace Classifier
                 {
                     string major = tokens[i].Split('[', ']')[1];
                     major = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(major.ToLower());
-                    major = major.Replace(' ', '_');
+                    major = major.Replace(" ", string.Empty);
                     majorOrder.Add(major.ToEnum<Major>());
                 }
             }

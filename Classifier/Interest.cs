@@ -16,7 +16,7 @@ namespace Classifier
         Gadgets_And_Experiments,
         Animals,
         Puzzles_And_Problem_Solving,
-        Current_Events,
+        Media_And_Current_Events,
         Working_With_Hands,
         Entertainment,
         Social_Issues,
