@@ -62,16 +62,21 @@ namespace Classifier
 
             //append matrix values
             string textForFile = "";
-            for (int i = 0; i < r2.Length; i++)
+            List<Interest> interestInCodeOrder = Enum.GetValues(typeof(Interest)).OfType<Interest>().ToList();
+            List<Major> majorsInCodeOrder = Enum.GetValues(typeof(Major)).OfType<Major>().ToList();
+
+            for (int i = 0; i < interestInCodeOrder.Count; i++) //topics
             {
                 textForFile += "\t\t\tnew double[] { ";
-                for (int j = 0; j < r2[i].Length; j++)
+                for (int j = 0; j < majorsInCodeOrder.Count; j++) //majors
                 {
                     if (j % 4 == 0)
                     {
                         textForFile += Environment.NewLine + "\t\t\t\t";
                     }
-                    textForFile += j == r2[i].Length - 1 ? r2[i][j].ToString() : r2[i][j].ToString() + ", ";
+                    int indexI = data.InterestOrder.IndexOf(interestInCodeOrder[i]);
+                    int indexJ = data.MajorOrder.IndexOf(majorsInCodeOrder[j]);
+                    textForFile += j == r2[i].Length - 1 ? r2[indexI][indexJ].ToString() : r2[indexI][indexJ].ToString() + ", ";
                 }
                 textForFile += i == r2.Length - 1 ? Environment.NewLine + "\t\t\t}" : Environment.NewLine + "\t\t\t},";
                 textForFile += Environment.NewLine;

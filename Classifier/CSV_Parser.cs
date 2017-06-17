@@ -35,7 +35,7 @@ namespace Classifier
                     double interestValue = Convert.ToDouble(items[i].Enumerize<Rating>()) + 1.0;
                     interestValuesList[row].Add(interestValue);
                 }
-                for (int i = TOTAL_INTERESTS + 1; i < TOTAL_INTERESTS + TOTAL_MAJORS; i++)
+                for (int i = TOTAL_INTERESTS + 1; i < TOTAL_INTERESTS + 1 + TOTAL_MAJORS; i++)
                 {
                     double majorValue = Convert.ToDouble(items[i].Enumerize<Rating>()) + 1.0;
                     majorValuesList[row].Add(majorValue);
